@@ -48,11 +48,11 @@ def read_input_csv(path: str) -> List[Dict[str, str]]:
         input_reader = csv.DictReader(
             input_fp,
             fieldnames=[
-                'amount',
-                'date',
-                'description',
-                'time',
-                'type'
+                "date",
+                "time",
+                "amount",
+                "type",
+                "description"
             ],
             dialect=csv.unix_dialect
         )
@@ -60,6 +60,8 @@ def read_input_csv(path: str) -> List[Dict[str, str]]:
             if not idx:
                 continue
             transactions.append(row)
+
+    transactions.reverse()
 
     return transactions
 
