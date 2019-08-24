@@ -115,6 +115,7 @@ def convert_csv(input_csv: str, account: str) -> None:
         f'ledger convert {input_csv} '
         '--input-date-format %Y-%m-%d '
         '--date-format %Y-%m-%d '
+        '--invert '
         f'--account {account}'
     )
     proc = subprocess.run(cmd.split(' '), capture_output=True, check=True)
